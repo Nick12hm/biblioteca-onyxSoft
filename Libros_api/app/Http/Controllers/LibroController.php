@@ -54,14 +54,14 @@ class LibroController extends Controller
      * show permite obtener un registro en especifico de la tabla libros.
      * @param number $id representa el dato especifico que consulta un cliente.
      */
-    public function show(Libro $id)
+    public function show($id)
     {
         try {
             $libro = Libro::find($id);
             if ($libro) {
                 return response()->json(['mensaje'=>'Consulta exitosa', 'data'=>$libro, 'estado'=>200]);
             }else {
-                return response()->json(['mensaje'=>'No existe el registro', 'data' =>$libro, 'estado'=>404]);
+                return response()->json(['mensaje'=>'No existe el registro', 'data'=>$libro, 'estado'=>404]);
             }
         } catch (\Throwable $th) {
             return response()->json(['mensaje'=>$th->getMessage(), 'estado'=>500]);
@@ -111,9 +111,12 @@ class LibroController extends Controller
             if ($libro) {
                 $libro->delete();
                 return response()->json(['mensaje'=> 'Registro eliminado con exito', 'data'=>null, 'estado'=>204]);
-            }    
+            }else {
+                return response()->json(['mensaje'=> 'El registro no existe', 'data'=>null, 'estado'=>404]);
+
+            }   
         } catch (\Throwable $th) {
-            return response()->json($th->getMessage(), 500);
+            return response()->json(['mensaje'=>$th->getMessage(), 'estado'=>500]);
         }
     }
 }
