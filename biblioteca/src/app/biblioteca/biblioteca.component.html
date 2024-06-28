@@ -1,0 +1,68 @@
+<div class="container-fluid">
+    <nav class="row navbar bg-body-tertiary mb-5">
+        <div class="container-fluid">
+          <a class="navbar-brand">Bienvenidos a nuestra Biblioteca</a>
+          
+        </div>
+    </nav>
+    <div class="row mt-5">
+        <div class="col-5">
+            <h1>{{title}}</h1>
+            <form class="row g-3">
+                <div class="col-md-5">
+                  <label for="validationDefault01" class="form-label">Título</label>
+                  <input type="text" class="form-control" id="validationDefault01" [(ngModel)]="libro.titulo" [ngModelOptions]="{standalone: true}" required>
+                </div>
+                <div class="col-md-5">
+                  <label for="validationDefault02" class="form-label">Autor</label>
+                  <input type="text" class="form-control" id="validationDefault02" [(ngModel)]="libro.autor" [ngModelOptions]="{standalone: true}" required>
+                </div>
+               
+                <div class="col-md-5">
+                  <label for="validationDefault03" class="form-label">Año de publicación</label>
+                  <input type="text" class="form-control" id="validationDefault03" [(ngModel)]="libro.year" [ngModelOptions]="{standalone: true}" required>
+                </div>
+                <div class="col-md-5">
+                  <label for="validationDefault05" class="form-label">Genero</label>
+                  <input type="text" class="form-control" id="validationDefault05" [(ngModel)]="libro.genero" [ngModelOptions]="{standalone: true}" required>
+                </div>
+    
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit" (click)="saveBook()">
+                        <i class="bi bi-check-circle p-1"></i>{{btnSave}}
+                    </button>
+                </div>
+              </form>
+        </div>
+        <div class="col-7">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Título</th>
+                    <th scope="col">Autor</th>
+                    <th scope="col">Año De Publicación</th>
+                    <th scope="col">Genero</th>
+                    <th scope="col">Opcines</th>
+                </tr>
+                </thead>
+                <tbody>
+                    @for (book of books; track $index) {
+                        <tr>
+                            <td>{{book.titulo}}</td>
+                            <td>{{book.autor}}</td>
+                            <td>{{book.aniopublicacion}}</td>
+                            <td>{{book.genero}}</td>
+                            <td>
+                                <button type="button" class="btn btn-primary bi bi-pencil-square" (click)="editBook(book.id)"></button>
+                                <button type="button" class="btn btn-danger bi bi-trash" (click)="confirmatedeleteBook(book.id)"></button>
+                            </td>
+                        </tr>
+                    }
+                
+                </tbody>
+            </table>
+      </div>
+    </div>
+  </div>
+
+  
