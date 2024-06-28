@@ -53,11 +53,11 @@ export class BibliotecaComponent implements OnInit {
           if(dato){
             this.title = 'Editar información';
             this.btnSave = 'Actualizar';
-            this.libro.id = dato[0].id;
-            this.libro.titulo = dato[0].titulo;
-            this.libro.autor = dato[0].autor;
-            this.libro.year = dato[0].aniopublicacion;
-            this.libro.genero = dato[0].genero;
+            this.libro.id = dato.id;
+            this.libro.titulo = dato.titulo;
+            this.libro.autor = dato.autor;
+            this.libro.year = dato.aniopublicacion;
+            this.libro.genero = dato.genero;
             console.log(this.libro);
             
           }else{
@@ -88,8 +88,8 @@ export class BibliotecaComponent implements OnInit {
     bookForm.append('genero', this.libro.genero);
 
     this.serviceapi.queryPost(url, bookForm).subscribe({
-      next: (response) => {
-        if(response.estado == 201 || 200){
+      next: (response) => {        
+        if(response.estado == 201 || response.estado == 200){
           Swal.fire({
             title: "Exitoso!",
             text: response.mensaje,
