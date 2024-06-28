@@ -3,8 +3,7 @@
 
 Se ha creado una api que permite llevar una administración simple del inventario de libros de una Biblioteca. Para la creación y prueba de esta Api Rest se utilizaron las tecnologías de Laravel y Angular, además de PostgreSQL para una base de datos de prueba.
 
-
-
+- [Video_Desmostración](https://drive.google.com/file/d/1YCgvZFuB6XeosSPVV9_hhVrP6jPvdWmr/view?usp=sharing)
 
 ## Installation
 
