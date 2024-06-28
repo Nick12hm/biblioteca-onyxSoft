@@ -31,3 +31,30 @@ Con estas instalaciones el Backend debería correr sin ningún problema.
 
 - [Laravel](https://laravel.com/docs/10.x)
 - [Postgres](https://www.postgresql.org/download/)
+
+
+### Frontend (Angular)
+
+#### Comandos para entorno de desarrollo
+- node [Descargar node](https://nodejs.org/en/download/package-manager)
+
+Una arternativa a node, y para una administración de versiones use nvm
+- nvm [Descargar nvm](https://github.com/coreybutler/nvm-windows/releases)
+
+Despues de tener node en local, instalar Angular CLI
+-  npm install -g @angular/cli
+
+Con estas instalaciones el Frontend debería correr sin ningún problema.
+
+#### Comandos inicales
+```bash
+  npm install (Dependencias de NPM)
+  npm start o ng serve (Levantar proyecto)
+```
+
+#### Links relacionados
+
+- [Angular](https://angular.dev/)
+- [NVM](https://github.com/nvm-sh/nvm)
+- [Node](https://nodejs.org/en)
+
